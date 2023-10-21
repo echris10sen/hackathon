@@ -1,10 +1,13 @@
-// const postModel = require("../models/posts-model");
+const postModel = require("../models/postModel");
 
 const postPkg = {}
 
-postPkg.getPostsData = async function (req, res, next) {
-    console.log("not here");
-    res.send("Hello World");
+postPkg.getPosts = async function (req, res, next) {
+    let posts = await postModel.getPostsData();
+    let data = await {
+        "posts": posts
+    }
+    res.json(data);
 }
 
 module.exports = postPkg;
