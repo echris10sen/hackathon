@@ -10,6 +10,7 @@ app.get('/', (req, res) => {
 })
 
 app.use("/posts", (req, res) =>{
+  console.log("Someone connected");
   postModel.getPostsData()
   res.send("Im in Posts")
 })
