@@ -10,4 +10,8 @@ postPkg.getPosts = async function (req, res, next) {
     res.json(data);
 }
 
+postPkg.addPost = async function (req, res, next) {
+    postModel.getPostsData(req, res)
+}
+
 module.exports = postPkg;

@@ -13,4 +13,8 @@ async function getPostsData() {
 
 }
 
+async function postData (req, res) {
+    
+}
+
 module.exports = { getPostsData }
