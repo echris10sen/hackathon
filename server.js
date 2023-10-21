@@ -5,6 +5,7 @@ const app = express()
 // const postsRoute = require("./Routes/postsRoute.js")
 const postModel = require("./models/postModel")
 app.get('/', (req, res) => {
+  console.log("Someone connected");
   res.send("Hello World");
 })
 
