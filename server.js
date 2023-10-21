@@ -2,16 +2,19 @@
 const express = require("express")
 const env = require("dotenv").config()
 const app = express()
-// const postsRoute = require("./Routes/postsRoute.js")
+const postsRoute = require("./Routes/postsRoute.js")
 const postModel = require("./models/postModel")
 app.get('/', (req, res) => {
   console.log("Someone connected");
   res.send("Hello World");
 })
 
-app.use("/posts", (req, res) =>{
+app.use("/posts", async (req, res) =>{
   console.log("Someone connected");
-  let data = postModel.getPostsData()
+  let posts = await postModel.getPostsData()
+  let data = await {
+    "posts": posts
+  }
   res.json(data)
 })
 
