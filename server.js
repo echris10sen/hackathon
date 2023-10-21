@@ -11,8 +11,9 @@ app.get('/', (req, res) => {
 
 app.use("/posts", (req, res) =>{
   console.log("Someone connected");
-  postModel.getPostsData()
-  res.send("Im in Posts")
+  let data = postModel.getPostsData()
+  JSON.stringify(data)
+  res.json(data)
 })
 
 
